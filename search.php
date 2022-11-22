@@ -44,7 +44,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 			<div class="headerContent">
 
 				<div class="logoContainer">
-					
+
 					<a href="index.php"><img src="assets/images/marleneLogo.png"></a></div>
 
 				<div class="searchContainer">
@@ -94,7 +94,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 			}
 			else {
 				$resultsProvider = new ImageResultsProvider($con);
-				$pageSize = 30;
+				$pageSize = 20;
 			}
 
 			$numResults = $resultsProvider->getNumResults($term);

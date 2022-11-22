@@ -184,6 +184,6 @@ function followLinks($url) {
 
 }
 
-$startUrl = "http://www.facebook.com";
+$startUrl = "http://www.google.com";
 followLinks($startUrl);
 ?>

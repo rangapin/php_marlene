@@ -12,10 +12,13 @@ class ImageResultsProvider {
 		$query = $this->con->prepare("SELECT COUNT(*) as total FROM images WHERE (title LIKE :term OR alt LIKE :term) AND broken=0");
 
 		$searchTerm = "%". $term . "%";
+
 		$query->bindParam(":term", $searchTerm);
+
 		$query->execute();
 
 		$row = $query->fetch(PDO::FETCH_ASSOC);
+
 		return $row["total"];
 
 	}
@@ -27,9 +30,13 @@ class ImageResultsProvider {
 		$query = $this->con->prepare("SELECT * FROM images WHERE (title LIKE :term OR alt LIKE :term)AND broken=0 ORDER BY clicks DESC LIMIT :fromLimit, :pageSize");
 
 		$searchTerm = "%". $term . "%";
+
 		$query->bindParam(":term", $searchTerm);
+
 		$query->bindParam(":fromLimit", $fromLimit, PDO::PARAM_INT);
+
 		$query->bindParam(":pageSize", $pageSize, PDO::PARAM_INT);
+		
 		$query->execute();
 
 		$resultsHtml = "<div class='imageResults'>";
