@@ -28,11 +28,9 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 	<title>Marlene</title>
 </head>
@@ -46,6 +44,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 			<div class="headerContent">
 
 				<div class="logoContainer">
+					
 					<a href="index.php"><img src="assets/images/marleneLogo.png"></a></div>
 
 				<div class="searchContainer">
@@ -75,25 +74,16 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 					<!-- If  type value is site add the active class -->	
 
 					<li class="<?php echo $type == 'sites' ? 'active' : '' ?>">
-						<a href='<?php echo "search.php?term=$term&type=sites"; ?>'> Sites</a></li>
+						<a href='<?php echo "search.php?term=$term&type=sites"; ?>'>Sites</a></li>
 
 					<li class="<?php echo $type == 'images' ? 'active' : '' ?>">
-						<a href='<?php echo "search.php?term=$term&type=images"; ?>'> Images</a></li>
+						<a href='<?php echo "search.php?term=$term&type=images"; ?>'>Images</a></li>
 
 				</ul>
 
 			</div>
 
 		</div>
-
-
-
-
-
-
-
-
-
 
 		<div class="mainResultsSection">
 
@@ -111,21 +101,14 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
 			echo "<p class='resultsCount'>$numResults results found</p>";
 
-
-
 			echo $resultsProvider->getResultsHtml($page, $pageSize, $term);
 			?>
 
-
 		</div>
-
-
 
 		<div class="paginationContainer">
 
 			<div class="pageButtons">
-
-
 
 				<div class="pageNumberContainer">
 					<img src="assets/images/pageStart.png">
@@ -164,15 +147,10 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 						</div>";
 					}
 
-
 					$currentPage++;
 					$pagesLeft--;
 
 				}
-
-
-
-
 
 				?>
 
@@ -180,24 +158,16 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 					<img src="assets/images/pageEnd.png">
 				</div>
 
-
-
 			</div>
-
-
-
 
 		</div>
 
-
-
-
-
-
-
 	</div>
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 	<script type="text/javascript" src="assets/js/script.js"></script>
+
 </body>
 </html>

@@ -135,10 +135,7 @@ function getDetails($url) {
 
 			insertImage($url, $src, $alt, $title);
 		}
-
 	}
-
-
 }
 
 function followLinks($url) {
@@ -148,14 +145,20 @@ function followLinks($url) {
 
 	$parser = new DomDocumentParser($url);
 
+//get links and store them in a variable
+
 	$linkList = $parser->getLinks();
+
+//loop over the link variable
 
 	foreach($linkList as $link) {
 		$href = $link->getAttribute("href");
 
+//remove invalid URL links (starting with #)
 		if(strpos($href, "#") !== false) {
 			continue;
 		}
+//remove javacripts in URL (executing code)
 		else if(substr($href, 0, 11) == "javascript:") {
 			continue;
 		}
@@ -181,6 +184,6 @@ function followLinks($url) {
 
 }
 
-$startUrl = "http://www.richardangapin.com";
+$startUrl = "http://www.facebook.com";
 followLinks($startUrl);
 ?>
